@@ -1,8 +1,4 @@
-'use client'
-
-// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-// import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-
+'use client';
 
 import Navbar from "@/components/Navbar"
 import LeastCard from "@/components/LeastCard"
@@ -12,13 +8,20 @@ import RecentCard from "@/components/RecentCard"
 
 export default function Dashboard() {
 
+  const sampleItem = {
+    name: "Classic T-Shirt",
+    type: "Shirt",
+    category: "Casual",
+    lastWorn: "30 days ago",
+    imageUrl: "/least.png",
+  };
 
   const recentOutfits = [
     { id: 1, name: "Casual Friday", date: "2023-04-14" },
     { id: 2, name: "Weekend Brunch", date: "2023-04-12" },
     { id: 3, name: "Office Meeting", date: "2023-04-10" },
-    // { id: 4, name: "Date Night", date: "2023-04-08" },
-    // { id: 5, name: "Workout Session", date: "2023-04-06" },
+    // { id: 4, name: "Weekend Brunch", date: "2023-04-12" },
+    // { id: 5, name: "Office Meeting", date: "2023-04-10" },
   ]
 
   const styleInsights = [
@@ -42,18 +45,15 @@ export default function Dashboard() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-1">
-        <div className="container py-6 md:py-10">
-          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-6">
-
-            <LeastCard />
-
+      <main className="flex-1 mx-auto">
+        <div className="flex flex-col m-10 w-[100ch]">
+          <h1 className="text-4xl font-bold tracking-tight">Dashboard</h1>
+          <div className="inline-grid gap-10 grid-cols-2 mt-6">
+            <LeastCard item={sampleItem} />
             <StyleCard styleInsights={styleInsights} />
-
             <HealthCard wardrobeHealth={wardrobeHealth} />
           </div>
-          <div className="mt-8">
+          <div className="mt-8 w-[100ch]">
             <RecentCard recentOutfits={recentOutfits} />
           </div>
         </div>

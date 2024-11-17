@@ -17,27 +17,27 @@ interface StyleInsightsCardProps {
 const StyleInsightsCard: React.FC<StyleInsightsCardProps> = ({ styleInsights }) => {
     return (
         <Card className="md:col-span-2 lg:col-span-1">
-        <CardHeader>
-            <CardTitle className="flex items-center">
-            <TrendingUp className="mr-2 h-4 w-4" />
-            Style Insights
-            </CardTitle>
-        </CardHeader>
-        <CardContent>
-            <div className="space-y-4">
-            {styleInsights.map((style, index) => (
-                <div key={index} className="flex items-center">
-                <div className="w-36 text-sm font-medium">{style.style}</div>
-                <div className="w-full">
-                    <Progress value={style.percentage} className="h-2" />
+            <CardHeader>
+                <CardTitle className="flex items-center">
+                <TrendingUp className="mr-2 h-4 w-4" />
+                Style Insights
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                <div className="space-y-4">
+                {styleInsights.map((style, index) => (
+                    <div key={index} className="flex items-center">
+                    <div className="w-36 text-sm font-medium">{style.style}</div>
+                    <div className="w-full">
+                        <Progress value={style.percentage} className="h-2" />
+                    </div>
+                    <div className="w-12 text-right text-sm text-muted-foreground">
+                        {style.percentage}%
+                    </div>
+                    </div>
+                ))}
                 </div>
-                <div className="w-12 text-right text-sm text-muted-foreground">
-                    {style.percentage}%
-                </div>
-                </div>
-            ))}
-            </div>
-        </CardContent>
+            </CardContent>
         </Card>
     );
 };

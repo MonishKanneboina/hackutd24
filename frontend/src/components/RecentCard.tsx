@@ -20,16 +20,16 @@ const RecentOutfitsCard: React.FC<RecentOutfitsCardProps> = ({ recentOutfits }) 
             </CardHeader>
             <CardContent>
                 <ScrollArea className="rounded-md border">
-                    <div className="flex gap-x-4 p-4"> {/* Adds horizontal gap between outfit cards */}
-                    {recentOutfits.map((outfit) => (
-                        <div key={outfit.id} className="w-[250px] space-y-3">
-                        <div className="aspect-square bg-muted rounded-md"></div>
-                        <div className="space-y-1 text-sm">
-                            <h3 className="font-medium leading-none">{outfit.name}</h3>
-                            <p className="text-xs text-muted-foreground">{outfit.date}</p>
-                        </div>
-                        </div>
-                    ))}
+                    <div className="flex gap-x-7 p-4"> {/* Adds horizontal gap between outfit cards */}
+                        {recentOutfits.map((outfit) => (
+                            <div key={outfit.id} className="w-[250px] space-y-3 hover:bg-red-600">
+                                <div className="aspect-square bg-muted rounded-md"></div>
+                                <div className="space-y-1 text-sm">
+                                    <h3 className="font-medium leading-none">{outfit.name}</h3>
+                                    <p className="text-xs text-muted-foreground">{outfit.date}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                     <ScrollBar orientation="horizontal" />
                 </ScrollArea>
